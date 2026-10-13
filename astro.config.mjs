@@ -1,27 +1,25 @@
-// @ts-check
-import { defineConfig } from "astro/config";
-import tailwind from "@astrojs/tailwind";
-import react from "@astrojs/react";
-import sitemap from "@astrojs/sitemap";
+import { defineConfig } from 'astro/config';
+import tailwind from '@astrojs/tailwind';
+import react from '@astrojs/react';
+import sitemap from '@astrojs/sitemap';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-// https://astro.build/config
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 export default defineConfig({
-  site: "https://yeplahy.ir", // دامنه رسمی سایت برای تولید دقیق sitemap و canonical
+  site: 'https://amiralimosavi.ir',
+  output: 'static',
   integrations: [tailwind(), react(), sitemap()],
-  vite: {
-    resolve: {
-      alias: {
-        "@": "/src",
-        "@components": "/src/components",
-      },
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+      '@components': path.resolve(__dirname, './src/components'),
     },
   },
-  output: "static",
-  build: {
-    inlineStylesheets: "auto",
-  },
   server: {
-    host: true,
     port: 4321,
+    host: true,
   },
 });

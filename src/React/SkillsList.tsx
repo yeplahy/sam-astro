@@ -12,49 +12,52 @@ interface SkillCategory {
 
 const skillData: SkillCategory[] = [
   {
-    id: "fullstack",
-    command: "yeplahy inspect --arch fullstack",
-    title: "Full-stack & Architecture",
-    roleTag: "System Engineering",
+    id: "leadership",
+    command: "amiralimosavi exec --venture leadership",
+    title: "Executive & Strategy",
+    roleTag: "Venture Leadership",
     summary:
-      "Scalable web applications, type-safe API layers, and distributed cloud services.",
+      "Directing venture strategy, scaling cross-functional teams, and managing end-to-end product lifecycles.",
     items: [
-      "Next.js, React, Astro & TypeScript ecosystems",
-      "Node.js, Python microservices & asynchronous pipelines",
-      "PostgreSQL, SQLite, Supabase & schema migrations",
-      "Dockerized deployments, CI/CD automation & edge runtimes",
+      "Venture Leadership & Company Roadmapping",
+      "Product Strategy & Value Proposition Alignment",
+      "Agile / Scrum Operations & Sprint Orchestration",
+      "Stakeholder Negotiation & Business Development",
+      "Cross-functional Team Mentorship & Culture",
     ],
-    metrics: { label: "Engineered For", val: "Resilience & Zero Latency" },
+    metrics: { label: "Execution Velocity", val: "Founder & CEO Momentum" },
   },
   {
     id: "design",
-    command: "yeplahy inspect --dir design-systems",
-    title: "Design & Product Direction",
-    roleTag: "Product & UI Engineering",
+    command: "amiralimosavi inspect --ux product-design",
+    title: "Product Design & UX",
+    roleTag: "Product & UI/UX",
     summary:
-      "Design systems, ergonomic user interfaces, and interaction architecture.",
+      "Designing intuitive digital products grounded in user psychology, iterative testing, and robust design systems.",
     items: [
-      "Atomic design tokens & scalable component libraries",
-      "Figma to production-grade TailwindCSS workflows",
-      "WCAG 2.2 AA accessibility-first implementation",
-      "Design management methodologies & user experience audits",
+      "High-Fidelity Figma Prototyping & Design Systems",
+      "Information Architecture & Strategic User Flows",
+      "User Research, Usability Testing & Empathy Mapping",
+      "Visual Design Principles & Ergonomic Layouts",
+      "Organic SEO Strategy & Experience Architecture",
     ],
-    metrics: { label: "Design Authority", val: "PhD Design Mgmt." },
+    metrics: { label: "Product Health", val: "High Usability & Retention" },
   },
   {
-    id: "bioit",
-    command: "yeplahy inspect --lab bio-research",
-    title: "Bio-IT & Research Tools",
-    roleTag: "Applied Bioinformatics",
+    id: "technical",
+    command: "amiralimosavi query --analytics data-front",
+    title: "Data & Front-end Foundations",
+    roleTag: "Data & Tech",
     summary:
-      "Data pipelines, research automation, and medical platform architectures.",
+      "Analytical problem solving driven by Python and data science, complemented by modern front-end engineering.",
     items: [
-      "Immunology data parsing & analytical pipelines",
-      "Python computational workflows for biological datasets",
-      "Persian Bio digital infrastructure & enterprise consulting",
-      "Specialized scientific data visualization tools",
+      "Data Science & Analytical Pipelines with Python",
+      "Modern Front-end Development (React, Next.js & TypeScript)",
+      "Production Styling with Tailwind CSS & Clean HTML5",
+      "Business Intelligence Dashboards & Power BI Analytics",
+      "Prompt Engineering & Applied AI Workflow Integration",
     ],
-    metrics: { label: "Focus Domain", val: "Immunology & Health Tech" },
+    metrics: { label: "Analytical Rigor", val: "Data-Driven Execution" },
   },
 ];
 
@@ -70,7 +73,7 @@ export default function SkillsList() {
           Capabilities & Toolkit
         </p>
         <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-[var(--white)]">
-          What I Engineer
+          Core Competencies
         </h2>
       </div>
 
@@ -87,7 +90,7 @@ export default function SkillsList() {
                 aria-pressed={isSelected}
                 className={`w-full text-left p-4 rounded-xl transition-all duration-200 border flex flex-col gap-1.5 cursor-pointer ${
                   isSelected
-                    ? "bg-[#18181b] border-[var(--sec)] shadow-[0_0_24px_rgba(164,118,255,0.14)] ring-1 ring-[var(--sec)]/40"
+                    ? "bg-[#18181b] border-[var(--sec)] shadow-[0_0_24px_rgba(56,122,255,0.18)] ring-1 ring-[var(--sec)]/40"
                     : "bg-[#121214] border-[var(--white-icon-tr)] hover:border-zinc-700 text-zinc-400 hover:text-zinc-200"
                 }`}
               >
@@ -112,14 +115,14 @@ export default function SkillsList() {
         </div>
 
         {/* Right Column: Interactive Terminal */}
-        <div className="lg:col-span-7 flex flex-col rounded-xl overflow-hidden border border-zinc-800 bg-[#0c0c0e] shadow-2xl font-mono text-xs min-h-[320px]">
+        <div className="lg:col-span-7 flex flex-col rounded-xl border border-zinc-800 bg-[#0c0c0e] shadow-2xl font-mono text-xs min-h-[320px] overflow-hidden">
           {/* Terminal Window Header */}
           <div className="flex items-center justify-between px-4 py-3 bg-[#16161a] border-b border-zinc-800/80">
             <div className="flex items-center gap-2">
               <span className="w-3 h-3 rounded-full bg-[#ff5f56]/90 inline-block" />
               <span className="w-3 h-3 rounded-full bg-[#ffbd2e]/90 inline-block" />
               <span className="w-3 h-3 rounded-full bg-[#27c93f]/90 inline-block" />
-              <span className="ml-2 text-zinc-400 text-[11px]">yeplahy@system:~</span>
+              <span className="ml-2 text-zinc-400 text-[11px]">amiralimosavi@system:~</span>
             </div>
             <span className="text-[10px] text-zinc-500 uppercase tracking-wider">
               zsh session

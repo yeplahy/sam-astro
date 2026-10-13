@@ -5,14 +5,14 @@ interface Props {
   title?: string;
 }
 
-const { title = "Abolfazl Eslahi — Full-Stack Developer" } = Astro.props;
+const { title = "AmirAli Mosavi — CEO & Product Designer" } = Astro.props;
 
 // پیکربندی آدرس پایه و هویت برند شخصی
-const siteUrl = "https://yeplahy.ir";
-const authorName = "Abolfazl Eslahi";
-const roleTitle = "Full-Stack Developer";
+const siteUrl = "https://amiralimosavi.ir";
+const authorName = "AmirAli Mosavi";
+const roleTitle = "CEO & Product Designer";
 const siteDescription =
-  "Abolfazl Eslahi (yeplahy) — Full-Stack Developer specializing in scalable web architecture, high-performance frontend interfaces, and type-safe systems.";
+  "AmirAli Mosavi — Co-Founder & CEO of PersianBio and Taxiino, Product Designer, DVM student, and beginner front-end engineer focused on product strategy, data-driven execution, and digital experiences.";
 const ogImageUrl = `${siteUrl}/og.image.png`;
 ---
 
@@ -58,20 +58,27 @@ const ogImageUrl = `${siteUrl}/og.image.png`;
       {
         "@context": "https://schema.org",
         "@type": "Person",
-        "name": "Abolfazl Eslahi",
-        "alternateName": "yeplahy",
-        "url": "https://yeplahy.ir",
-        "image": "https://yeplahy.ir/og.image.png",
+        "name": "AmirAli Mosavi",
+        "url": "https://amiralimosavi.ir",
+        "image": "https://amiralimosavi.ir/og.image.png",
         "sameAs": [
-          "https://github.com/yeplahy",
-          "https://linkedin.com/in/yeplahy"
+          "https://www.linkedin.com/feed/",
+          "https://t.me/SAMamiralimosavi",
+          "https://scholar.google.com/citations?hl=en&user=p6GVjicAAAAJ&view_op=list_works&citft=1&email_for_op=s.amiralimosavisam@gmail.com&gmla=GAPGPTMASKTOKENaanntsd5n5hX0X",
+          "https://orcid.org/0009-0000-2610-9379"
         ],
-        "jobTitle": "Full-Stack Developer",
-        "worksFor": {
-          "@type": "Organization",
-          "name": "Freelance & Open Source"
-        },
-        "description": "Full-Stack Developer building scalable web applications, robust cloud APIs, and high-performance user interfaces."
+        "jobTitle": "CEO & Product Designer",
+        "worksFor": [
+          {
+            "@type": "Organization",
+            "name": "PersianBio"
+          },
+          {
+            "@type": "Organization",
+            "name": "Taxiino"
+          }
+        ],
+        "description": "Co-Founder & CEO of PersianBio and Taxiino, Product Designer, DVM student, and beginner front-end engineer focused on product strategy, data-driven execution, and digital experiences."
       }
     </script>
   </head>
