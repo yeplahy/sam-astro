@@ -1,5 +1,4 @@
 ---
-import LetterGlitch from "../React/LetterGlitch.tsx";
 import LogoWall from "../components/logoWall.astro";
 import SkillsList from "../React/SkillsList.tsx";
 ---
@@ -8,7 +7,7 @@ import SkillsList from "../React/SkillsList.tsx";
   <div class="max-w-5xl mx-auto space-y-8 md:py-36 pb-14">
     <div class="text-left space-y-4">
       <p class="text-md md:text-lg text-[var(--white-icon)] shiny-white">
-        Hi, I'm Your Name
+        Hi, I'm Abolfazl Eslahi
       </p>
       <div
         class="flex flex-col lg:flex-row lg:items-center space-y-4 lg:space-y-0 lg:space-x-8 md:gap-4"
@@ -16,21 +15,20 @@ import SkillsList from "../React/SkillsList.tsx";
         <h1
           class="text-[var(--white)] text-5xl md:text-6xl font-medium text-pretty leading-none"
         >
-          Software <br /> Developer
+          Full-stack <br /> Engineer
         </h1>
         <p class="text-md md:text-2xl text-[var(--white-icon)]">
-          Transforming ideas into interactive and seamless digital experiences
-          with cutting-edge <span class="text-[var(--sec)] shiny-sec"
-            >frontend</span
-          > development.
+          Engineering digital experiences and <span class="text-[var(--sec)] shiny-sec">Bio-IT</span> systems with a designer’s eye for detail.
         </p>
       </div>
-      <div class="flex justify-start gap-2 pt-3 md:pt-6">
+      <div class="flex flex-wrap justify-start gap-2 pt-3 md:pt-6">
+        <!-- GitHub -->
         <a
           target="_blank"
-          href="https://github.com"
+          rel="noopener noreferrer"
+          href="https://github.com/yeplahy"
           aria-label="GitHub"
-          class="text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-1 border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
+          class="text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -43,11 +41,14 @@ import SkillsList from "../React/SkillsList.tsx";
             ></path>
           </svg>
         </a>
+
+        <!-- Telegram -->
         <a
           target="_blank"
-          href="https://linkedin.com"
-          aria-label="LinkedIn"
-          class="text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-1 border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
+          rel="noopener noreferrer"
+          href="https://t.me/yeplahy"
+          aria-label="Telegram"
+          class="text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -56,24 +57,64 @@ import SkillsList from "../React/SkillsList.tsx";
             class="size-8"
           >
             <path
-              d="M18.3362 18.339H15.6707V14.1622C15.6707 13.1662 15.6505 11.8845 14.2817 11.8845C12.892 11.8845 12.6797 12.9683 12.6797 14.0887V18.339H10.0142V9.75H12.5747V10.9207H12.6092C12.967 10.2457 13.837 9.53325 15.1367 9.53325C17.8375 9.53325 18.337 11.3108 18.337 13.6245V18.339H18.3362ZM7.00373 8.57475C6.14573 8.57475 5.45648 7.88025 5.45648 7.026C5.45648 6.1725 6.14648 5.47875 7.00373 5.47875C7.85873 5.47875 8.55173 6.1725 8.55173 7.026C8.55173 7.88025 7.85798 8.57475 7.00373 8.57475ZM8.34023 18.339H5.66723V9.75H8.34023V18.339ZM19.6697 3H4.32923C3.59498 3 3.00098 3.5805 3.00098 4.29675V19.7033C3.00098 20.4202 3.59498 21 4.32923 21H19.6675C20.401 21 21.001 20.4202 21.001 19.7033V4.29675C21.001 3.5805 20.401 3 19.6675 3H19.6697Z"
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"
             ></path>
           </svg>
         </a>
+
+        <!-- Instagram -->
         <a
           target="_blank"
-          href="mailto:hello@example.com"
-          aria-label="Email"
-          class="text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-1 border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
+          rel="noopener noreferrer"
+          href="https://instagram.com/yeplahy"
+          aria-label="Instagram"
+          class="text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="2.1em"
-            height="2.1em"
             viewBox="0 0 24 24"
+            fill="currentColor"
+            class="size-8"
           >
             <path
-              fill="currentColor"
+              d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+            ></path>
+          </svg>
+        </a>
+
+        <!-- Dribbble -->
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://dribbble.com/yeplahy"
+          aria-label="Dribbble"
+          class="text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="size-8"
+          >
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.034 8.034 0 0 1 1.947 5.093c-.412-.082-2.259-.425-4.437.472-.257-.59-.537-1.189-.841-1.782 2.214-1.488 3.092-3.328 3.331-3.783zM12 3.967c2.09 0 4.004.801 5.449 2.115-.224.417-1.045 2.138-3.197 3.528-1.127-2.072-2.38-3.864-2.584-4.148.11-.008.22-.012.332-.012v.517zm-2.348 1.053c.189.261 1.42 1.996 2.548 4.02-3.664 1.049-7.054.088-7.444-.029 1.066-2.28 3.04-3.991 4.896-3.991zm-5.685 6.98c.451.12 3.424.966 6.945.023.316.634.612 1.264.885 1.884-3.527 1.057-6.85 3.905-7.143 4.168a8.016 8.016 0 0 1-.687-6.075zm7.394 8.033a8.01 8.01 0 0 1-5.185-1.895c.277-.282 3.125-2.825 6.486-3.766.974 2.628 1.393 4.963 1.463 5.405-.88.167-1.79.256-2.764.256zm4.568-1.393c-.066-.379-.452-2.544-1.373-5.029 2.025-.941 3.73-.615 4.116-.532a8.04 8.04 0 0 1-2.743 5.561z"
+            ></path>
+          </svg>
+        </a>
+
+        <!-- Email -->
+        <a
+          href="mailto:yeplahy@gmail.com"
+          aria-label="Email"
+          class="text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="size-8"
+          >
+            <path
               d="m18.73 5.41l-1.28 1L12 10.46L6.55 6.37l-1.28-1A2 2 0 0 0 2 7.05v11.59A1.36 1.36 0 0 0 3.36 20h3.19v-7.72L12 16.37l5.45-4.09V20h3.19A1.36 1.36 0 0 0 22 18.64V7.05a2 2 0 0 0-3.27-1.64"
             ></path>
           </svg>
@@ -81,22 +122,12 @@ import SkillsList from "../React/SkillsList.tsx";
       </div>
     </div>
 
+    <!-- Tech Stack Logos -->
     <LogoWall />
 
-    <div class="flex flex-col lg:flex-row items-center gap-8">
+    <!-- Interactive Systems & Skills Terminal -->
+    <div class="w-full pt-6">
       <SkillsList client:load />
-      <div
-        class="flex justify-center md:w-full md:h-[292px] size-[290px] pt-3 md:pt-9 md:ml-16"
-      >
-        <LetterGlitch
-          client:load
-          glitchColors={["#5e4491", "#A476FF", "#241a38"]}
-          glitchSpeed={33}
-          centerVignette={false}
-          outerVignette={true}
-          smooth={true}
-        />
-      </div>
     </div>
   </div>
 </section>

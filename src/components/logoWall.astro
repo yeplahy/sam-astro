@@ -1,52 +1,63 @@
 ---
-const technologies = [
-  "astro",
-  "vue",
-  "react",
-  "typeScript",
-  "tailwindcss",
-  "next",
-  "nodejs",
-  "HTML5",
-  "CSS3",
-  "javaScript",
-  "git",
-  "supabase",
-  "mysql",
-  "bash",
+interface TechItem {
+  slug: string; // شناسه برای CDN آیکون‌ها
+  name: string; // نام نمایشی
+  hex?: string; // رنگ اختصاصی برند برای حالت hover
+}
+
+const technologies: TechItem[] = [
+  { slug: "nextdotjs", name: "Next.js", hex: "ffffff" },
+  { slug: "react", name: "React", hex: "61DAFB" },
+  { slug: "typescript", name: "TypeScript", hex: "3178C6" },
+  { slug: "python", name: "Python", hex: "3776AB" },
+  { slug: "nodedotjs", name: "Node.js", hex: "5FA04E" },
+  { slug: "postgresql", name: "PostgreSQL", hex: "4169E1" },
+  { slug: "sqlite", name: "SQLite", hex: "003B57" },
+  { slug: "supabase", name: "Supabase", hex: "3ECF8E" },
+  { slug: "docker", name: "Docker", hex: "2496ED" },
+  { slug: "astro", name: "Astro", hex: "FF5D01" },
+  { slug: "vuedotjs", name: "Vue.js", hex: "4FC08D" },
+  { slug: "tailwindcss", name: "TailwindCSS", hex: "06B6D4" },
+  { slug: "figma", name: "Figma", hex: "F24E1E" },
+  { slug: "git", name: "Git", hex: "F05032" },
 ];
 ---
 
-<div class="relative overflow-x-hidden py-8">
-  <div class="pointer-events-none absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[var(--background)] to-transparent z-20"></div>
-  <div class="pointer-events-none absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[var(--background)] to-transparent z-20"></div>
+<section class="relative overflow-x-hidden py-10" id="tech-stack">
+  <!-- سایه‌های لبه چپ و راست برای محو شدن نرم -->
+  <div
+    class="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[var(--black)] to-transparent z-20 pointer-events-none"
+  >
+  </div>
+  <div
+    class="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-[var(--black)] to-transparent z-20 pointer-events-none"
+  >
+  </div>
 
   <div class="flex animate-scroll w-max will-change-transform">
-    {
-      [...technologies, ...technologies].map((tech, index) => (
-        <div 
-          class="flex items-center gap-2 pr-12 md:pr-20 group transition-all duration-300"
-          aria-hidden={index >= technologies.length ? "true" : "false"}
-        >
-          <img
-            src={`/svg/${tech}.svg`}
-            alt={tech}
-            class="h-7 w-auto object-contain transition-transform group-hover:scale-110 opacity-60"
-            width="30"
-            height="30"
-            loading={index < technologies.length ? "eager" : "lazy"}
-            decoding="async"
-          />
-          <span class="text-lg font-medium text-[var(--white-icon)] whitespace-nowrap">
-            {tech.charAt(0).toUpperCase() + tech.slice(1)}
-          </span>
-        </div>
-      ))
-    }
+    {[...technologies, ...technologies].map((tech, index) => (
+      <div
+        class="flex items-center gap-3 pr-12 md:pr-16 group transition-all duration-300 cursor-default"
+        aria-hidden={index >= technologies.length ? "true" : "false"}
+      >
+        <img
+          src={`https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/${tech.slug}.svg`}
+          alt={tech.name}
+          class="h-6 w-6 md:h-7 md:w-7 object-contain filter invert opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300 shrink-0"
+          loading={index < technologies.length ? "eager" : "lazy"}
+          width="28"
+          height="28"
+          decoding="async"
+        />
+        <span class="text-[var(--white-icon)] font-medium text-sm md:text-base group-hover:text-[var(--white)] transition-colors whitespace-nowrap">
+          {tech.name}
+        </span>
+      </div>
+    ))}
   </div>
-</div>
+</section>
 
-<style is:global>
+<style>
   @keyframes scroll {
     0% {
       transform: translate3d(0, 0, 0);
@@ -55,13 +66,19 @@ const technologies = [
       transform: translate3d(-50%, 0, 0);
     }
   }
+
   .animate-scroll {
-    animation: scroll 60s linear infinite;
+    animation: scroll 40s linear infinite;
   }
 
   @media (min-width: 768px) {
     .animate-scroll {
-      animation-duration: 50s;
+      animation: scroll 35s linear infinite;
     }
+  }
+
+  /* توقف انیمیشن هنگام هاور کاربر برای تجربه کاربری بهتر */
+  #tech-stack:hover .animate-scroll {
+    animation-play-state: paused;
   }
 </style>
