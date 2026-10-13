@@ -1,24 +1,34 @@
 ---
 interface Props {
-  title: string;
+  title?: string;
 }
 
-const { title } = Astro.props;
+
+const { title = "Abolfazl Eslahi — Full-Stack Developer" } = Astro.props;
+
+// پیکربندی آدرس پایه و هویت برند شخصی
+const siteUrl = "https://yeplahy.ir";
+const authorName = "Abolfazl Eslahi";
+const roleTitle = "Full-Stack Developer";
+const siteDescription =
+  "Abolfazl Eslahi (yeplahy) — Full-Stack Developer specializing in scalable web architecture, high-performance frontend interfaces, and type-safe systems.";
+const ogImageUrl = `${siteUrl}/og.image.png`;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>{title} | Portfolio</title>
-    <meta
-      name="description"
-      content="Your Name - Software Developer building interactive and seamless digital experiences with cutting-edge frontend development."
-    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="canonical" href="https://darkminimal.vercel.app/" />
+    <title>{title}</title>
+    <meta name="description" content={siteDescription} />
+    <meta name="author" content={authorName} />
 
+    <!-- Canonical URL -->
+    <link rel="canonical" href={siteUrl} />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+
+    <!-- Preload Fonts (Performance-First) -->
     <link
       rel="preload"
       href="/fonts/montserrat-latin-wght-normal.woff2"
@@ -27,40 +37,40 @@ const { title } = Astro.props;
       crossorigin="anonymous"
     />
 
-    <meta
-      property="og:title"
-      content="Your Name | Software Developer"
-    />
-    <meta
-      property="og:description"
-      content="Portfolio of Your Name, Software Developer specializing in frontend and interactive experiences."
-    />
-    <meta
-      property="og:image"
-      content="https://darkminimal.vercel.app/og.image.png"
-    />
-    <meta property="og:url" content="https://darkminimal.vercel.app" />
+    <!-- Open Graph / LinkedIn / Facebook -->
     <meta property="og:type" content="website" />
-    <meta
-      property="og:site_name"
-      content="Your Name Portfolio"
-    />
+    <meta property="og:url" content={siteUrl} />
+    <meta property="og:title" content={`${authorName} — ${roleTitle}`} />
+    <meta property="og:description" content={siteDescription} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:site_name" content={`${authorName} Portfolio`} />
 
-    <!-- Structured Data (JSON-LD) -->
+    <!-- Twitter / X Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={siteUrl} />
+    <meta name="twitter:title" content={`${authorName} — ${roleTitle}`} />
+    <meta name="twitter:description" content={siteDescription} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
+    <!-- Structured Data (Schema.org JSON-LD for Rich Results) -->
     <script type="application/ld+json" is:inline>
       {
         "@context": "https://schema.org",
         "@type": "Person",
-        "name": "Your Name",
-        "alternateName": "Your Name",
-        "url": "https://darkminimal.vercel.app",
-        "image": "https://darkminimal.vercel.app/og.image.png",
+        "name": "Abolfazl Eslahi",
+        "alternateName": "yeplahy",
+        "url": "https://yeplahy.ir",
+        "image": "https://yeplahy.ir/og.image.png",
         "sameAs": [
-          "https://github.com",
-          "https://linkedin.com"
+          "https://github.com/yeplahy",
+          "https://linkedin.com/in/yeplahy"
         ],
-        "jobTitle": "Software Developer",
-        "description": "Software Developer building interactive and seamless digital experiences."
+        "jobTitle": "Full-Stack Developer",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Freelance & Open Source"
+        },
+        "description": "Full-Stack Developer building scalable web applications, robust cloud APIs, and high-performance user interfaces."
       }
     </script>
   </head>
@@ -81,10 +91,15 @@ const { title } = Astro.props;
 
   :root {
     --background: #101010;
-    --sec: #a476ff;
+    /* Persian Blue Accent Spectrum (WCAG 2.2 AA Compliant on #101010) */
+    --sec: #387aff;
+    --sec-hover: #5d93ff;
+    --sec-glow: rgba(56, 122, 255, 0.35);
+    
     --white: #dfdfdf;
     --white-icon: #f3f3f398;
     --white-icon-tr: #f3f3f310;
+    --container: #161616;
   }
 
   * {
@@ -100,32 +115,32 @@ const { title } = Astro.props;
 
   *::selection {
     background-color: var(--sec);
-    color: var(--background);
+    color: #ffffff;
   }
 
   /* Scrollbar styles */
-
   ::-webkit-scrollbar {
-    width: 15px;
+    width: 12px;
   }
 
   ::-webkit-scrollbar-track {
     background: var(--container);
-    border-radius: 30px;
+    border-radius: 20px;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: var(--background);
+    background: #232323;
     border-radius: 10px;
+    border: 2px solid var(--container);
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: var(--pink);
+    background: var(--sec);
   }
 
   /* Scrollbar styles for Firefox */
   * {
     scrollbar-width: thin;
-    scrollbar-color: var(--line) var(--container);
+    scrollbar-color: #2a2a2a var(--container);
   }
 </style>

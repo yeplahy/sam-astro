@@ -3,6 +3,13 @@ export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
+      colors: {
+        sec: {
+          DEFAULT: "#387aff", // Persian Blue Accent
+          hover: "#5d93ff",
+          glow: "rgba(56, 122, 255, 0.35)",
+        },
+      },
       keyframes: {
         scaleAnim: {
           '0%': { transform: 'scale(1)' },
