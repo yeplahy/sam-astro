@@ -1,7 +1,5 @@
-# robots.txt — https://darkminimal.vercel.app
-# https://www.robotstxt.org/robotstxt.html
-
+# robots.txt — https://yeplahy.ir
 User-agent: *
 Allow: /
 
-Sitemap: https://darkminimal.vercel.app/sitemap-index.xml
+Sitemap: https://yeplahy.ir/sitemap-index.xml
