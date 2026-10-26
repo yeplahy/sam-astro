@@ -2,22 +2,23 @@ import { useState } from "react";
 
 interface SkillCategory {
   id: string;
-  command: string;
+  badge: string;
   title: string;
   roleTag: string;
   summary: string;
   items: string[];
   metrics: { label: string; val: string };
+  icon: string;
 }
 
 const skillData: SkillCategory[] = [
   {
     id: "leadership",
-    command: "amiralimosavi exec --venture leadership",
+    badge: "Directorate & Governance",
     title: "Executive & Strategy",
     roleTag: "Venture Leadership",
     summary:
-      "Directing venture strategy, scaling cross-functional teams, and managing end-to-end product lifecycles.",
+      "Directing venture strategy, scaling cross-functional teams, and managing end-to-end product lifecycles with a rigorous focus on sustainable growth.",
     items: [
       "Venture Leadership & Company Roadmapping",
       "Product Strategy & Value Proposition Alignment",
@@ -26,14 +27,15 @@ const skillData: SkillCategory[] = [
       "Cross-functional Team Mentorship & Culture",
     ],
     metrics: { label: "Execution Velocity", val: "Founder & CEO Momentum" },
+    icon: "◈",
   },
   {
     id: "design",
-    command: "amiralimosavi inspect --ux product-design",
+    badge: "User Experience Architecture",
     title: "Product Design & UX",
     roleTag: "Product & UI/UX",
     summary:
-      "Designing intuitive digital products grounded in user psychology, iterative testing, and robust design systems.",
+      "Designing intuitive digital products grounded in user psychology, rigorous iterative testing, and robust design systems that scale.",
     items: [
       "High-Fidelity Figma Prototyping & Design Systems",
       "Information Architecture & Strategic User Flows",
@@ -41,15 +43,16 @@ const skillData: SkillCategory[] = [
       "Visual Design Principles & Ergonomic Layouts",
       "Organic SEO Strategy & Experience Architecture",
     ],
-    metrics: { label: "Product Health", val: "High Usability & Retention" },
+    metrics: { label: "Design Maturity", val: "High Usability & Retention" },
+    icon: "❖",
   },
   {
     id: "technical",
-    command: "amiralimosavi query --analytics data-front",
+    badge: "Analytics & Engineering",
     title: "Data & Front-end Foundations",
     roleTag: "Data & Tech",
     summary:
-      "Analytical problem solving driven by Python and data science, complemented by modern front-end engineering.",
+      "Analytical problem-solving driven by Python and data pipelines, seamlessly complemented by modern, high-performance front-end architecture.",
     items: [
       "Data Science & Analytical Pipelines with Python",
       "Modern Front-end Development (React, Next.js & TypeScript)",
@@ -57,29 +60,34 @@ const skillData: SkillCategory[] = [
       "Business Intelligence Dashboards & Power BI Analytics",
       "Prompt Engineering & Applied AI Workflow Integration",
     ],
-    metrics: { label: "Analytical Rigor", val: "Data-Driven Execution" },
+    metrics: { label: "Technical Rigor", val: "Data-Driven Execution" },
+    icon: "⬡",
   },
 ];
 
 export default function SkillsList() {
-  const [activeCategory, setActiveCategory] = useState<SkillCategory>(
-    skillData[0]
-  );
+  const [activeCategory, setActiveCategory] = useState<SkillCategory>(skillData[0]);
 
   return (
-    <div className="w-full text-left" aria-label="Technical Expertise and Systems">
-      <div className="space-y-1 mb-6">
-        <p className="text-xs font-mono font-medium text-[var(--sec)] tracking-widest uppercase">
-          Capabilities & Toolkit
+    <div className="w-full text-left" aria-label="Executive Expertise and Systems">
+      {/* Section Header: Fixed Alignment */}
+      <div className="space-y-2 mb-10 relative pl-9">
+        {/* Decorative line positioned absolutely so it doesn't push the text */}
+        <span className="absolute left-0 top-[10px] h-px w-6 bg-[var(--sec)]/60" />
+        
+        <p className="text-[11px] font-semibold text-[var(--sec)] tracking-[0.25em] uppercase">
+          Governance & Competency
         </p>
-        <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-[var(--white)]">
-          Core Competencies
+        <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-[var(--white)]">
+          Core Executive Pillars
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
-        {/* Left Column: Domain Selectors */}
-        <div className="lg:col-span-5 flex flex-col gap-3 justify-center">
+      {/* Main Layout Grid */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        {/* Left Column: Compact Nav Cards */}
+        <div className="lg:col-span-4 flex flex-col gap-4">
           {skillData.map((category) => {
             const isSelected = activeCategory.id === category.id;
             return (
@@ -87,96 +95,112 @@ export default function SkillsList() {
                 key={category.id}
                 type="button"
                 onClick={() => setActiveCategory(category)}
-                aria-pressed={isSelected}
-                className={`w-full text-left p-4 rounded-xl transition-all duration-200 border flex flex-col gap-1.5 cursor-pointer ${
+                className={`group relative w-full text-left px-5 py-4 rounded-2xl transition-all duration-300 border flex flex-col gap-1.5 overflow-hidden cursor-pointer ${
                   isSelected
-                    ? "bg-[#18181b] border-[var(--sec)] shadow-[0_0_24px_rgba(56,122,255,0.18)] ring-1 ring-[var(--sec)]/40"
-                    : "bg-[#121214] border-[var(--white-icon-tr)] hover:border-zinc-700 text-zinc-400 hover:text-zinc-200"
+                    ? "bg-[#14171c] border-[var(--sec)] shadow-[0_8px_30px_rgba(41,151,159,0.15)] ring-1 ring-[var(--sec)]/30 translate-x-1"
+                    : "bg-[#0d0f12]/80 border-zinc-800/80 hover:border-zinc-700 hover:bg-[#12151a]"
                 }`}
               >
+                {isSelected && (
+                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-[var(--sec)] shadow-[0_0_12px_var(--sec)]" />
+                )}
+
                 <div className="flex items-center justify-between">
-                  <span
-                    className={`text-sm font-semibold tracking-wide ${
-                      isSelected ? "text-[var(--white)]" : "text-zinc-300"
-                    }`}
-                  >
+                  <span className={`text-base font-bold transition-colors ${isSelected ? "text-white" : "text-zinc-300 group-hover:text-white"}`}>
                     {category.title}
                   </span>
-                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-white/[0.05] border border-white/10 text-zinc-400">
-                    {category.roleTag}
+                  <span className={`text-sm font-mono ${isSelected ? "text-[var(--sec)]" : "text-zinc-600"}`}>
+                    {category.icon}
                   </span>
                 </div>
-                <p className="text-xs text-zinc-400 line-clamp-1 leading-relaxed">
-                  {category.summary}
-                </p>
+
+                <div className="flex items-center justify-between">
+                  <span className="text-[10px] font-mono tracking-wider text-zinc-500 uppercase">
+                    {category.roleTag}
+                  </span>
+                  <span className={`text-[10px] font-medium transition-opacity ${isSelected ? "text-[var(--sec)] opacity-100" : "opacity-0"}`}>
+                    Active View →
+                  </span>
+                </div>
               </button>
             );
           })}
         </div>
 
-        {/* Right Column: Interactive Terminal */}
-        <div className="lg:col-span-7 flex flex-col rounded-xl border border-zinc-800 bg-[#0c0c0e] shadow-2xl font-mono text-xs min-h-[320px] overflow-hidden">
-          {/* Terminal Window Header */}
-          <div className="flex items-center justify-between px-4 py-3 bg-[#16161a] border-b border-zinc-800/80">
-            <div className="flex items-center gap-2">
-              <span className="w-3 h-3 rounded-full bg-[#ff5f56]/90 inline-block" />
-              <span className="w-3 h-3 rounded-full bg-[#ffbd2e]/90 inline-block" />
-              <span className="w-3 h-3 rounded-full bg-[#27c93f]/90 inline-block" />
-              <span className="ml-2 text-zinc-400 text-[11px]">amiralimosavi@system:~</span>
+        {/* Right Column: Executive Strategic Deck */}
+        <div className="lg:col-span-8 flex flex-col justify-between rounded-2xl border border-zinc-800/80 bg-[#0d0f12] shadow-2xl overflow-hidden backdrop-blur-xl">
+          
+          {/* Deck Header */}
+          <div className="px-8 py-5 bg-[#12151a] border-b border-zinc-800/80 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+            <div className="flex items-center gap-3">
+              <span className="text-sm text-[var(--sec)] font-mono">{activeCategory.icon}</span>
+              <span className="text-xs font-mono font-semibold tracking-widest text-zinc-300 uppercase">
+                {activeCategory.badge}
+              </span>
             </div>
-            <span className="text-[10px] text-zinc-500 uppercase tracking-wider">
-              zsh session
-            </span>
+            <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-black/40 border border-zinc-800 text-[10px] font-mono text-zinc-400">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+              <span>DIRECTORATE_VERIFIED</span>
+            </div>
           </div>
 
-          {/* Terminal Body */}
-          <div className="p-5 flex-1 flex flex-col justify-between space-y-4 text-zinc-300">
-            <div className="space-y-4">
-              {/* Command line invocation */}
-              <div className="flex items-center gap-2 text-emerald-400">
-                <span className="text-zinc-500 select-none">$</span>
-                <span className="text-zinc-100 font-semibold">{activeCategory.command}</span>
-              </div>
-
-              {/* Status / Output */}
-              <div className="p-3 rounded-lg bg-zinc-900/60 border border-zinc-800/60 text-zinc-300 leading-relaxed text-[12px]">
-                <span className="text-[var(--sec)] font-semibold block mb-1">
-                  &gt; [domain.overview]
-                </span>
+          {/* Deck Body */}
+          <div className="p-8 space-y-8 flex-1 flex flex-col justify-center">
+            <div className="relative pl-5 border-l-2 border-[var(--sec)]">
+              <p className="text-zinc-300 text-sm md:text-base leading-relaxed font-normal">
                 {activeCategory.summary}
-              </div>
+              </p>
+            </div>
 
-              {/* Stack items */}
-              <div className="space-y-2">
-                <span className="text-zinc-500 uppercase text-[10px] tracking-wider block">
-                  Executed Competencies:
-                </span>
-                <ul className="space-y-1.5 pl-1">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+              
+              <div className="md:col-span-7 space-y-3">
+                <h4 className="text-[11px] font-mono uppercase tracking-widest text-zinc-500">
+                  Strategic Deliverables & Focus
+                </h4>
+                <ul className="space-y-2.5">
                   {activeCategory.items.map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-2 text-zinc-300">
-                      <span className="text-[var(--sec)] select-none">✔</span>
-                      <span>{item}</span>
+                    <li key={idx} className="text-xs md:text-sm text-zinc-300 flex items-start gap-3">
+                      <span className="text-[var(--sec)] mt-0.5 text-xs font-bold">▪</span>
+                      <span className="leading-snug">{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
-            </div>
 
-            {/* Bottom Status Bar */}
-            <div className="pt-3 border-t border-zinc-800/80 flex items-center justify-between text-[11px] text-zinc-500">
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                <span>status: operational</span>
+              <div className="md:col-span-5">
+                <div className="h-full p-5 rounded-xl border border-zinc-800 bg-[#14171c]/90 flex flex-col justify-between space-y-3 shadow-inner relative overflow-hidden group">
+                  <div className="absolute -right-6 -bottom-6 w-24 h-24 bg-[var(--sec)]/5 rounded-full blur-xl pointer-events-none" />
+                  
+                  <div>
+                    <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-500 block mb-1">
+                      Validated Metric / KPI
+                    </span>
+                    <div className="text-base md:text-lg font-bold text-white tracking-tight">
+                      {activeCategory.metrics.val}
+                    </div>
+                  </div>
+
+                  <div className="pt-3 border-t border-zinc-800/80 flex items-center justify-between">
+                    <span className="text-[10px] font-mono text-[var(--sec)] uppercase tracking-wider">
+                      {activeCategory.metrics.label}
+                    </span>
+                    <span className="text-xs text-zinc-500 font-mono">100%</span>
+                  </div>
+                </div>
               </div>
-              <div className="text-zinc-400">
-                <span>{activeCategory.metrics.label}: </span>
-                <strong className="text-zinc-200 font-medium">
-                  {activeCategory.metrics.val}
-                </strong>
-              </div>
+
             </div>
           </div>
+
+          {/* Deck Footer */}
+          <div className="px-8 py-4 bg-[#0a0c0f] border-t border-zinc-800/80 flex items-center justify-between text-[11px] font-mono text-zinc-500">
+            <span className="tracking-wide">AMIRALI MOSAVI — EXECUTIVE PROFILE</span>
+            <span className="text-[var(--sec)] tracking-wider">SECURE_SESSION // 2026</span>
+          </div>
+
         </div>
+
       </div>
     </div>
   );

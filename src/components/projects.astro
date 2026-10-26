@@ -27,7 +27,7 @@ const projects: Project[] = [
 
 <section class="max-w-5xl mx-auto py-16" id="projects">
   <div class="space-y-2 mb-10">
-    <p class="text-xs font-mono font-medium text-[var(--sec)] tracking-widest uppercase">
+    <p class="text-xs font-mono font-medium text-[#29979f] tracking-widest uppercase">
       Selected Works
     </p>
     <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-[var(--white)]">
@@ -38,7 +38,7 @@ const projects: Project[] = [
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
     {
       projects.map((project) => (
-        <article class="group relative flex flex-col justify-between p-5 rounded-2xl bg-[#121214] border border-[var(--white-icon-tr)] hover:border-[var(--sec)]/70 transition-all duration-300 hover:shadow-[0_0_24px_rgba(255,255,255,0.03)]">
+        <article class="group relative flex flex-col justify-between p-5 rounded-2xl bg-[#121417] border border-[var(--white-icon-tr)] hover:border-[#29979f]/70 transition-all duration-300 hover:shadow-[0_0_24px_rgba(41,151,159,0.08)]">
           <div class="space-y-4">
             {/* Visual Thumbnail */}
             <a
@@ -64,10 +64,10 @@ const projects: Project[] = [
                   href={project.preview}
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="text-lg font-semibold text-[var(--white)] hover:text-[var(--sec)] transition-colors flex items-center gap-2"
+                  class="text-lg font-semibold text-[var(--white)] hover:text-[#29979f] transition-colors flex items-center gap-2"
                 >
                   <span>{project.title}</span>
-                  <span class="inline-flex h-2 w-2 rounded-full bg-emerald-400/80 shadow-[0_0_8px_rgba(52,211,153,0.6)]" title="Online" />
+                  <span class="inline-flex h-2 w-2 rounded-full bg-[#29979f]/80 shadow-[0_0_8px_rgba(41,151,159,0.6)]" title="Online" />
                 </a>
               </div>
               {/* Minimal Technology & Strategy Tags */}
@@ -112,7 +112,7 @@ const projects: Project[] = [
               href={project.preview}
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-1 text-[var(--sec)] hover:text-white transition-colors group/link font-medium"
+              class="inline-flex items-center gap-1 text-[#29979f] hover:text-[#8b262a] transition-colors group/link font-medium"
             >
               <span>Visit project</span>
               <svg

@@ -22,7 +22,7 @@ import SkillsList from "../React/SkillsList.tsx";
         </p>
       </div>
 
-      <!-- Social & Academic Profiles (Persian Blue Active States) -->
+      <!-- Social & Academic Profiles (Updated to Dark Teal & Maroon Palette) -->
       <div class="flex flex-wrap justify-start gap-3 pt-3 md:pt-6">
         <!-- LinkedIn -->
         <a
@@ -30,7 +30,7 @@ import SkillsList from "../React/SkillsList.tsx";
           rel="noopener noreferrer"
           href="https://www.linkedin.com/feed/"
           aria-label="LinkedIn Profile"
-          class="text-[var(--white-icon)] hover:text-[#5d93ff] hover:border-[#387aff]/60 hover:shadow-[0_0_18px_rgba(56,122,255,0.25)] transition-all duration-300 ease-out border border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[#1a233a]"
+          class="text-[var(--white-icon)] hover:text-[#29979f] hover:border-[#29979f]/60 hover:shadow-[0_0_18px_rgba(41,151,159,0.25)] transition-all duration-300 ease-out border border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#2125299c] hover:bg-[#2b2d42]"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -51,7 +51,7 @@ import SkillsList from "../React/SkillsList.tsx";
           rel="noopener noreferrer"
           href="https://t.me/SAMamiralimosavi"
           aria-label="Telegram Direct"
-          class="text-[var(--white-icon)] hover:text-[#5d93ff] hover:border-[#387aff]/60 hover:shadow-[0_0_18px_rgba(56,122,255,0.25)] transition-all duration-300 ease-out border border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[#1a233a]"
+          class="text-[var(--white-icon)] hover:text-[#29979f] hover:border-[#29979f]/60 hover:shadow-[0_0_18px_rgba(41,151,159,0.25)] transition-all duration-300 ease-out border border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#2125299c] hover:bg-[#2b2d42]"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -72,7 +72,7 @@ import SkillsList from "../React/SkillsList.tsx";
           rel="noopener noreferrer"
           href="https://scholar.google.com/citations?hl=en&user=p6GVjicAAAAJ&view_op=list_works&citft=1&email_for_op=s.amiralimosavisam@gmail.com&gmla=GAPGPTMASKTOKEN9zb6kysq78X0X"
           aria-label="Google Scholar Profile"
-          class="text-[var(--white-icon)] hover:text-[#5d93ff] hover:border-[#387aff]/60 hover:shadow-[0_0_18px_rgba(56,122,255,0.25)] transition-all duration-300 ease-out border border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[#1a233a]"
+          class="text-[var(--white-icon)] hover:text-[#29979f] hover:border-[#29979f]/60 hover:shadow-[0_0_18px_rgba(41,151,159,0.25)] transition-all duration-300 ease-out border border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#2125299c] hover:bg-[#2b2d42]"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -93,7 +93,7 @@ import SkillsList from "../React/SkillsList.tsx";
           rel="noopener noreferrer"
           href="https://orcid.org/0009-0000-2610-9379"
           aria-label="ORCID Profile"
-          class="text-[var(--white-icon)] hover:text-[#5d93ff] hover:border-[#387aff]/60 hover:shadow-[0_0_18px_rgba(56,122,255,0.25)] transition-all duration-300 ease-out border border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[#1a233a]"
+          class="text-[var(--white-icon)] hover:text-[#29979f] hover:border-[#29979f]/60 hover:shadow-[0_0_18px_rgba(41,151,159,0.25)] transition-all duration-300 ease-out border border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#2125299c] hover:bg-[#2b2d42]"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -112,7 +112,7 @@ import SkillsList from "../React/SkillsList.tsx";
         <a
           href="mailto:s.amiralimosavisam@gmail.com"
           aria-label="Direct Email"
-          class="text-[var(--white-icon)] hover:text-[#5d93ff] hover:border-[#387aff]/60 hover:shadow-[0_0_18px_rgba(56,122,255,0.25)] transition-all duration-300 ease-out border border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[#1a233a]"
+          class="text-[var(--white-icon)] hover:text-[#29979f] hover:border-[#29979f]/60 hover:shadow-[0_0_18px_rgba(41,151,159,0.25)] transition-all duration-300 ease-out border border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#2125299c] hover:bg-[#2b2d42]"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -140,18 +140,24 @@ import SkillsList from "../React/SkillsList.tsx";
 </section>
 
 <style is:global>
-  /* Modern Electric Cyan/Turquoise Sheen (No Purple Tint) */
+  /* Executive palette: teal accent with a restrained maroon transition */
   .shiny-sec {
-    background: linear-gradient(135deg, #06b6d4 20%, #67e8f9 50%, #22d3ee 80%);
+    background: linear-gradient(
+      135deg,
+      #29979f 0%,
+      #29979f 45%,
+      #7e5368 75%,
+      #8f4057 100%
+    );
     background-size: 300% 100%;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    animation: shine-cyan 3.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    animation: shine-palette 3.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
     display: inline-block;
   }
 
-  @keyframes shine-cyan {
+  @keyframes shine-palette {
     0% {
       background-position: 100% 50%;
     }

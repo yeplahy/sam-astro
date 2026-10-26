@@ -1,17 +1,17 @@
 import { useRef, useEffect } from "react";
 
 const LetterGlitch = ({
-  glitchColors = ["#5e4491", "#A476FF", "#241a38"],
+  glitchColors = ["#8b262a", "#29979f", "#424242", "#a43237", "#1f7278"],
   glitchSpeed = 33,
   centerVignette = false,
   outerVignette = false,
   smooth = true,
 }: {
-  glitchColors: string[];
-  glitchSpeed: number;
-  centerVignette: boolean;
-  outerVignette: boolean;
-  smooth: boolean;
+  glitchColors?: string[];
+  glitchSpeed?: number;
+  centerVignette?: boolean;
+  outerVignette?: boolean;
+  smooth?: boolean;
 }) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const animationRef = useRef<number | null>(null);
@@ -189,13 +189,13 @@ const LetterGlitch = ({
   };
 
   const updateLetters = () => {
-    if (!letters.current || letters.current.length === 0) return; // Prevent accessing empty array
+    if (!letters.current || letters.current.length === 0) return;
 
     const updateCount = Math.max(1, Math.floor(letters.current.length * 0.05));
 
     for (let i = 0; i < updateCount; i++) {
       const index = Math.floor(Math.random() * letters.current.length);
-      if (!letters.current[index]) continue; // Skip if index is invalid
+      if (!letters.current[index]) continue;
 
       letters.current[index].char = getRandomChar();
       letters.current[index].targetColor = getRandomColor();
@@ -278,10 +278,10 @@ const LetterGlitch = ({
   }, [glitchSpeed, smooth]);
 
   return (
-    <div className="relative w-full h-full bg-[#101010] overflow-hidden">
+    <div className="relative w-full h-full bg-[#121417] overflow-hidden">
       <canvas ref={canvasRef} className="block w-full h-full" />
       {outerVignette && (
-        <div className="absolute top-0 left-0 w-full h-full pointer-events-none bg-[radial-gradient(circle,_rgba(16,16,16,0)_60%,_rgba(16,16,16,1)_100%)]"></div>
+        <div className="absolute top-0 left-0 w-full h-full pointer-events-none bg-[radial-gradient(circle,_rgba(18,20,23,0)_60%,_rgba(18,20,23,1)_100%)]"></div>
       )}
       {centerVignette && (
         <div className="absolute top-0 left-0 w-full h-full pointer-events-none bg-[radial-gradient(circle,_rgba(0,0,0,0.8)_0%,_rgba(0,0,0,0)_60%)]"></div>
